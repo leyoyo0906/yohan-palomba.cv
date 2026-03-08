@@ -3,1274 +3,724 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Yohan Palomba — Product Manager Hardware & Software | Paris | En recherche active">
-    <meta name="keywords" content="Product Manager, Chef de Produit, Yohan Palomba, Paris, Hardware, Software, Sport, Industrie, Innovation">
+    <meta name="title" content="Yohan Palomba — Product Manager | Paris">
+    <meta name="description" content="Yohan Palomba, Product Manager spécialisé hardware et software. Pilotage de produits technologiques, capteurs connectés, logiciels embarqués. Paris, France.">
     <meta name="author" content="Yohan Palomba">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
     <meta property="og:title" content="Yohan Palomba — Product Manager">
-    <meta property="og:description" content="Product Manager Hardware & Software · Paris · En recherche active">
-    <title>Yohan Palomba — Product Manager</title>
-
+    <meta property="og:description" content="Product Manager spécialisé hardware et software. Pilotage de produits technologiques. Paris, France.">
+    <meta property="og:image" content="photo-yohan.jpg">
+    <meta property="og:locale" content="fr_FR">
+    <title>Yohan Palomba — Product Manager | Paris</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            /* Palette */
-            --noir: #0B0B0F;
-            --noir-2: #101016;
-            --noir-3: #16161E;
-            --gris-900: #1C1C26;
-            --gris-800: #2A2A36;
-            --gris-700: #3E3E4C;
-            --gris-600: #5C5C6E;
-            --gris-500: #7E7E90;
-            --gris-400: #A0A0B0;
-            --gris-300: #C4C4D0;
-            --gris-200: #DCDCE4;
-            --gris-100: #EEEEEF;
-            --gris-50: #F6F6F8;
-            --blanc: #FFFFFF;
-            --creme: #FAFAF9;
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        :root{
+            --primary:#0066FF;--primary-light:#3385FF;--primary-dark:#0052CC;
+            --accent:#FF8C00;--accent-light:#FFA333;
+            --bg-dark:#0A0A0A;--bg-section:#F8F9FA;--bg-white:#FFFFFF;
+            --text-primary:#1A1A1A;--text-secondary:#6B7280;--text-light:#FFFFFF;
+            --border:#E5E7EB;
+            --card-shadow:0 4px 20px rgba(0,0,0,0.08);
+            --card-shadow-hover:0 8px 30px rgba(0,102,255,0.15);
+            --font-heading:'Poppins',sans-serif;--font-body:'Inter',sans-serif;
+            --section-padding:100px 0;--container-width:1140px;
+            --radius-sm:8px;--radius-md:12px;--radius-lg:16px;--radius-xl:24px;
+        }
+        html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+        body{font-family:var(--font-body);font-weight:400;color:var(--text-primary);line-height:1.6;background:var(--bg-white);overflow-x:hidden}
+        img{max-width:100%;height:auto;display:block}
+        a{text-decoration:none;color:inherit;transition:color .3s ease}
+        ul{list-style:none}
 
-            --or: #C8A455;
-            --or-light: #DABB72;
-            --or-dark: #A8883A;
-            --or-glow: rgba(200, 164, 85, 0.15);
-            --or-glow-strong: rgba(200, 164, 85, 0.25);
+        /* CONTAINER */
+        .container{width:100%;max-width:var(--container-width);margin:0 auto;padding:0 24px}
 
-            --bleu: #3B5998;
-            --vert: #34C77B;
-            --vert-pale: #E8F9F0;
+        /* SECTION TITLE */
+        .section-title{font-family:var(--font-heading);font-size:36px;font-weight:700;color:var(--text-primary);text-align:center;margin-bottom:60px}
+        .section-title::after{content:'';display:block;width:60px;height:4px;background:var(--primary);border-radius:2px;margin:16px auto 0}
+        .section-title--light{color:var(--text-light)}
+        .section-title--light::after{background:var(--accent)}
 
-            /* Typo */
-            --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-display: 'Playfair Display', Georgia, serif;
-            --font-mono: 'JetBrains Mono', monospace;
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(40px);transition:opacity .6s ease,transform .6s ease}
+        .reveal.revealed{opacity:1;transform:translateY(0)}
+        .reveal-left{opacity:0;transform:translateX(-60px);transition:opacity .6s ease,transform .6s ease}
+        .reveal-left.revealed{opacity:1;transform:translateX(0)}
+        .reveal-right{opacity:0;transform:translateX(60px);transition:opacity .6s ease,transform .6s ease}
+        .reveal-right.revealed{opacity:1;transform:translateX(0)}
+        .stagger-children .reveal:nth-child(1){transition-delay:0s}
+        .stagger-children .reveal:nth-child(2){transition-delay:.1s}
+        .stagger-children .reveal:nth-child(3){transition-delay:.2s}
+        .stagger-children .reveal:nth-child(4){transition-delay:.3s}
+        .stagger-children .reveal:nth-child(5){transition-delay:.4s}
 
-            /* Effets */
-            --ease: cubic-bezier(0.4, 0, 0.2, 1);
-            --shadow-card: 0 4px 24px rgba(0,0,0,0.06);
-            --shadow-card-hover: 0 12px 40px rgba(0,0,0,0.10);
-            --shadow-dark: 0 8px 32px rgba(0,0,0,0.4);
-            --radius: 16px;
-            --radius-sm: 10px;
-            --radius-xs: 6px;
-        }
+        /* ===== NAVBAR ===== */
+        .navbar{position:fixed;top:0;left:0;width:100%;z-index:1000;padding:16px 0;transition:background .3s ease,box-shadow .3s ease,padding .3s ease}
+        .navbar.scrolled{background:var(--bg-white);box-shadow:0 2px 20px rgba(0,0,0,.1);padding:10px 0}
+        .navbar .container{display:flex;align-items:center;justify-content:space-between}
+        .navbar__logo{font-family:var(--font-heading);font-size:24px;font-weight:700;color:var(--primary);letter-spacing:-.5px}
+        .navbar__links{display:flex;align-items:center;gap:32px}
+        .navbar__links a{font-size:15px;font-weight:500;color:var(--text-light);transition:color .3s ease;position:relative}
+        .navbar.scrolled .navbar__links a{color:var(--text-primary)}
+        .navbar__links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--primary);transition:width .3s ease}
+        .navbar__links a:hover::after{width:100%}
+        .navbar__links a:hover{color:var(--primary)}
+        .navbar__cta{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--text-light)!important;padding:10px 20px;border-radius:50px;font-size:14px;font-weight:600;transition:background .3s ease,transform .3s ease!important}
+        .navbar__cta::after{display:none!important}
+        .navbar__cta:hover{background:var(--accent-light);transform:scale(1.02)}
 
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: var(--font-body);
-            background: var(--creme);
-            color: var(--gris-700);
-            line-height: 1.75;
-            font-size: 17px;
-            -webkit-font-smoothing: antialiased;
-        }
-        ::selection { background: var(--or); color: var(--noir); }
+        /* HAMBURGER */
+        .hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;width:32px;height:32px;cursor:pointer;background:none;border:none;padding:0;z-index:1001}
+        .hamburger span{display:block;width:24px;height:2px;background:var(--text-light);border-radius:2px;transition:transform .3s ease,opacity .3s ease}
+        .navbar.scrolled .hamburger span{background:var(--text-primary)}
+        .hamburger span:nth-child(1){margin-bottom:6px}
+        .hamburger span:nth-child(3){margin-top:6px}
+        .hamburger.active span:nth-child(1){transform:translateY(8px) rotate(45deg);background:var(--text-light)}
+        .hamburger.active span:nth-child(2){opacity:0}
+        .hamburger.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg);background:var(--text-light)}
 
-        /* ========== NAV ========== */
-        nav {
-            position: fixed; top:0; left:0; right:0; z-index:1000;
-            background: rgba(11,11,15,0.7);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-            transition: all 0.4s var(--ease);
-        }
-        nav.scrolled-light {
-            background: rgba(255,255,255,0.92);
-            backdrop-filter: blur(24px);
-            border-bottom: 1px solid var(--gris-100);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-        }
-        nav.scrolled-light .nav-logo { color: var(--noir); }
-        nav.scrolled-light .nav-links a { color: var(--gris-600); }
-        nav.scrolled-light .nav-links a:hover { color: var(--noir); }
-        nav.scrolled-light .hamburger span { background: var(--noir); }
+        .mobile-menu{display:none;position:fixed;top:0;right:-100%;width:100%;height:100vh;background:var(--bg-dark);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:32px;transition:right .4s ease}
+        .mobile-menu.open{right:0}
+        .mobile-menu a{font-family:var(--font-heading);font-size:24px;font-weight:600;color:var(--text-light);transition:color .3s ease}
+        .mobile-menu a:hover{color:var(--primary)}
+        .mobile-menu .navbar__cta{font-size:18px;padding:14px 28px}
 
-        .nav-inner {
-            max-width: 1200px; margin:0 auto;
-            display: flex; justify-content: space-between; align-items: center;
-            height: 68px; padding: 0 2.5rem;
-        }
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem; font-weight: 800;
-            color: var(--blanc); text-decoration: none;
-            transition: color 0.4s var(--ease);
-        }
-        .nav-logo span { color: var(--or); }
-        .nav-links {
-            display: flex; gap: 2.2rem; list-style: none; align-items: center;
-        }
-        .nav-links a {
-            color: rgba(255,255,255,0.65); text-decoration: none;
-            font-size: 0.9rem; font-weight: 500; letter-spacing: 0.02em;
-            transition: all 0.3s var(--ease);
-        }
-        .nav-links a:hover { color: var(--blanc); }
-        .nav-cta-btn {
-            background: var(--or) !important; color: var(--noir) !important;
-            padding: 0.5rem 1.4rem !important; border-radius: 50px;
-            font-weight: 700 !important; font-size: 0.85rem !important;
-            letter-spacing: 0.03em !important;
-            transition: all 0.3s var(--ease);
-        }
-        .nav-cta-btn:hover {
-            background: var(--or-light) !important;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(200,164,85,0.35);
-        }
-        .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
-        .hamburger span { width:24px; height:2px; background:var(--blanc); border-radius:2px; transition: all 0.3s var(--ease); }
+        /* ===== HERO ===== */
+        .hero{min-height:100vh;background:var(--bg-dark);display:flex;align-items:center;position:relative;padding:120px 0 80px;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(0,102,255,.08) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+        .hero .container{display:flex;align-items:center;gap:60px;position:relative;z-index:1}
+        .hero__content{flex:1;min-width:0}
+        .hero__photo-wrapper{flex-shrink:0}
+        .hero__badge{display:inline-block;background:rgba(255,255,255,.1);padding:8px 16px;border-radius:50px;font-size:14px;color:#9CA3AF;margin-bottom:24px;opacity:0;transform:translateY(30px);animation:heroIn .6s ease .2s forwards}
+        .hero__title{font-family:var(--font-heading);font-size:56px;font-weight:700;color:var(--text-light);line-height:1.1;margin-bottom:8px;opacity:0;transform:translateY(30px);animation:heroIn .6s ease .3s forwards}
+        .hero__subtitle{font-family:var(--font-heading);font-size:32px;font-weight:600;color:var(--primary);margin-bottom:24px;opacity:0;transform:translateY(30px);animation:heroIn .6s ease .4s forwards}
+        .hero__pitch{font-size:18px;color:#9CA3AF;line-height:1.7;margin-bottom:32px;max-width:540px;opacity:0;transform:translateY(30px);animation:heroIn .6s ease .5s forwards}
+        .hero__buttons{display:flex;gap:16px;margin-bottom:32px;flex-wrap:wrap;opacity:0;transform:translateY(30px);animation:heroIn .6s ease .6s forwards}
+        .hero__socials{display:flex;gap:24px;opacity:0;transform:translateY(30px);animation:heroIn .6s ease .7s forwards}
+        .hero__socials a{color:#9CA3AF;font-size:14px;font-weight:500;transition:color .3s ease;letter-spacing:.3px}
+        .hero__socials a:hover{color:var(--primary)}
+        .hero__photo{width:320px;height:320px;border-radius:50%;border:4px solid var(--primary);box-shadow:0 0 40px rgba(0,102,255,.3);object-fit:cover;filter:grayscale(20%) contrast(1.05);opacity:0;transform:translateY(30px);animation:heroIn .8s ease .5s forwards;background:#1a1a2e}
+        @keyframes heroIn{to{opacity:1;transform:translateY(0)}}
+        .hero__scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:#9CA3AF;font-size:12px;font-weight:500;letter-spacing:1px;text-transform:uppercase;opacity:0;animation:heroIn .6s ease 1s forwards;display:flex;flex-direction:column;align-items:center;gap:8px}
+        .hero__scroll-arrow{width:20px;height:20px;border-right:2px solid #9CA3AF;border-bottom:2px solid #9CA3AF;transform:rotate(45deg);animation:bounceArr 2s ease-in-out infinite}
+        @keyframes bounceArr{0%,100%{transform:rotate(45deg) translate(0,0)}50%{transform:rotate(45deg) translate(4px,4px)}}
 
-        /* ========== HERO (DARK & IMMERSIF) ========== */
-        .hero {
-            min-height: 100vh;
-            background: var(--noir);
-            display: flex; align-items: center;
-            padding: 8rem 2.5rem 6rem;
-            position: relative; overflow: hidden;
-        }
-        .hero::before {
-            content:''; position:absolute;
-            top: -30%; right: -15%;
-            width: 900px; height: 900px;
-            background: radial-gradient(circle, rgba(200,164,85,0.07) 0%, transparent 65%);
-            border-radius: 50%;
-        }
-        .hero::after {
-            content:''; position:absolute;
-            bottom: -20%; left: -10%;
-            width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(59,89,152,0.05) 0%, transparent 65%);
-            border-radius: 50%;
-        }
+        /* BUTTONS */
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:var(--radius-sm);font-size:16px;font-weight:600;font-family:var(--font-body);cursor:pointer;transition:background .3s ease,color .3s ease,transform .3s ease,border-color .3s ease;border:2px solid transparent}
+        .btn:hover{transform:scale(1.02)}
+        .btn--primary{background:var(--primary);color:var(--text-light);border-color:var(--primary)}
+        .btn--primary:hover{background:var(--primary-light);border-color:var(--primary-light)}
+        .btn--outline{background:transparent;color:var(--primary);border-color:var(--primary)}
+        .btn--outline:hover{background:var(--primary);color:var(--text-light)}
+        .btn--accent{background:var(--accent);color:var(--text-light);border-color:var(--accent)}
+        .btn--accent:hover{background:var(--accent-light);border-color:var(--accent-light)}
+        .btn--outline-primary{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+        .btn--outline-primary:hover{background:var(--primary);color:var(--text-light)}
 
-        .hero-inner {
-            max-width: 1200px; margin: 0 auto; width: 100%;
-            display: grid; grid-template-columns: 1.1fr 0.9fr;
-            gap: 5rem; align-items: center;
-            position: relative; z-index: 1;
-        }
+        /* ===== METRICS ===== */
+        .metrics{padding:var(--section-padding);background:var(--bg-white)}
+        .metrics__grid{display:flex;gap:32px;justify-content:center}
+        .metric-card{flex:1;max-width:340px;background:var(--bg-white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:40px;text-align:center;transition:transform .3s ease,box-shadow .3s ease}
+        .metric-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+        .metric-card__number{font-family:var(--font-heading);font-size:48px;font-weight:700;color:var(--accent);margin-bottom:8px;line-height:1.2}
+        .metric-card__label{font-size:16px;color:var(--text-secondary);font-weight:500}
 
-        .hero-badge {
-            display: inline-flex; align-items: center; gap: 0.6rem;
-            background: rgba(52,199,123,0.1);
-            border: 1px solid rgba(52,199,123,0.25);
-            color: var(--vert); padding: 0.45rem 1.3rem;
-            border-radius: 50px; font-size: 0.85rem;
-            font-weight: 600; margin-bottom: 2rem;
-        }
-        .hero-badge .dot {
-            width: 9px; height: 9px; background: var(--vert);
-            border-radius: 50%; animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%,100% { opacity:1; transform:scale(1); box-shadow: 0 0 0 0 rgba(52,199,123,0.4); }
-            50% { opacity:0.7; transform:scale(1.2); box-shadow: 0 0 0 8px rgba(52,199,123,0); }
-        }
+        /* ===== ABOUT ===== */
+        .about{padding:var(--section-padding);background:var(--bg-section)}
+        .about__grid{display:flex;gap:60px;align-items:flex-start}
+        .about__text{flex:3}
+        .about__text p{font-size:17px;line-height:1.8;color:var(--text-primary)}
+        .about__tags{flex:2}
+        .about__tags-grid{display:flex;flex-wrap:wrap;gap:10px}
+        .tag{display:inline-block;background:rgba(0,102,255,.1);color:var(--primary);border-radius:50px;padding:8px 16px;font-size:14px;font-weight:500;white-space:nowrap;transition:background .3s ease,transform .3s ease}
+        .tag:hover{background:rgba(0,102,255,.18);transform:translateY(-2px)}
 
-        .hero-name {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 6vw, 4.8rem);
-            font-weight: 900; color: var(--blanc);
-            line-height: 1.05; letter-spacing: -0.03em;
-            margin-bottom: 0.8rem;
-        }
-        .hero-name .gold { color: var(--or); }
+        /* ===== EXPERIENCE ===== */
+        .experience{padding:var(--section-padding);background:var(--bg-white)}
+        .timeline{position:relative;max-width:900px;margin:0 auto}
+        .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:rgba(0,102,255,.2);transform:translateX(-50%)}
+        .timeline__item{position:relative;width:50%;padding:0 40px 60px}
+        .timeline__item:nth-child(odd){left:0;text-align:right;padding-right:60px;padding-left:0}
+        .timeline__item:nth-child(even){left:50%;text-align:left;padding-left:60px;padding-right:0}
+        .timeline__item::before{content:'';position:absolute;top:8px;width:12px;height:12px;background:var(--primary);border-radius:50%;z-index:2}
+        .timeline__item:nth-child(odd)::before{right:-6px}
+        .timeline__item:nth-child(even)::before{left:-6px}
+        .exp-card{background:var(--bg-white);border-radius:var(--radius-md);padding:32px;box-shadow:var(--card-shadow);text-align:left;transition:transform .3s ease,box-shadow .3s ease}
+        .exp-card:hover{transform:translateY(-2px);box-shadow:var(--card-shadow-hover)}
+        .exp-card--main{border-left:4px solid var(--primary)}
+        .exp-card--secondary{border-left:4px solid var(--border)}
+        .exp-card__badge{display:inline-block;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:600;margin-bottom:12px;background:var(--accent);color:var(--text-light)}
+        .exp-card__period{font-size:14px;font-weight:600;color:var(--primary);margin-bottom:8px}
+        .exp-card__title{font-family:var(--font-heading);font-size:22px;font-weight:700;color:var(--text-primary);margin-bottom:4px;line-height:1.3}
+        .exp-card__company{font-size:16px;color:var(--text-secondary);margin-bottom:16px}
+        .exp-card__context{font-size:15px;font-style:italic;color:var(--text-secondary);line-height:1.6;margin-bottom:24px}
+        .exp-card__section{margin-bottom:20px}
+        .exp-card__section-title{font-size:15px;font-weight:600;color:var(--primary);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px}
+        .exp-card__list{padding-left:20px}
+        .exp-card__list li{font-size:14px;color:var(--text-primary);line-height:1.7;margin-bottom:6px;list-style:disc}
+        .exp-card__list li::marker{color:var(--primary)}
+        .metric-highlight{color:var(--accent);font-weight:700}
+        .exp-card__description{font-size:15px;color:var(--text-primary);line-height:1.7;margin-bottom:16px}
+        .exp-card__transferable{font-size:13px;color:var(--text-secondary);background:var(--bg-section);padding:12px 16px;border-radius:var(--radius-sm);line-height:1.6;border-left:3px solid var(--primary)}
 
-        .hero-title {
-            font-size: 1.3rem; font-weight: 600;
-            color: var(--or-light);
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.03em;
-        }
+        /* ===== SKILLS ===== */
+        .skills{padding:var(--section-padding);background:var(--bg-section)}
+        .skills__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+        .skill-card{background:var(--bg-white);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--card-shadow);transition:transform .3s ease,box-shadow .3s ease;border-top:3px solid var(--primary)}
+        .skill-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+        .skill-card__title{font-family:var(--font-heading);font-size:20px;font-weight:600;color:var(--text-primary);margin-bottom:20px}
+        .skill-card__list li{font-size:15px;color:var(--text-primary);padding:8px 0;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(0,0,0,.04)}
+        .skill-card__list li:last-child{border-bottom:none}
+        .skill-card__list li::before{content:'';width:6px;height:6px;background:var(--primary);border-radius:50%;flex-shrink:0}
 
-        .hero-desc {
-            font-size: 1.1rem; color: var(--gris-400);
-            line-height: 1.85; margin-bottom: 2rem;
-            max-width: 540px;
-        }
+        /* ===== EDUCATION ===== */
+        .education{padding:var(--section-padding);background:var(--bg-white)}
+        .education__grid{max-width:720px;margin:0 auto;position:relative}
+        .education__grid::before{content:'';position:absolute;left:16px;top:0;bottom:0;width:2px;background:rgba(0,102,255,.15)}
+        .edu-card{position:relative;padding-left:52px;margin-bottom:40px}
+        .edu-card::before{content:'';position:absolute;left:10px;top:6px;width:14px;height:14px;background:var(--primary);border-radius:50%;border:3px solid var(--bg-white);z-index:1}
+        .edu-card__period{font-size:14px;font-weight:600;color:var(--primary);margin-bottom:4px}
+        .edu-card__degree{font-family:var(--font-heading);font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:4px;line-height:1.4}
+        .edu-card__school{font-size:15px;color:var(--text-secondary)}
+        .education__extra{max-width:720px;margin:40px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+        .edu-extra-card{background:var(--bg-section);border-radius:var(--radius-md);padding:24px}
+        .edu-extra-card__title{font-family:var(--font-heading);font-size:18px;font-weight:600;color:var(--text-primary);margin-bottom:16px}
+        .edu-extra-card li{font-size:14px;color:var(--text-primary);padding:6px 0;display:flex;align-items:center;gap:8px}
+        .edu-extra-card li::before{content:'';width:5px;height:5px;background:var(--primary);border-radius:50%;flex-shrink:0}
 
-        .hero-tags {
-            display: flex; flex-wrap: wrap; gap: 0.6rem;
-            margin-bottom: 2.5rem;
-        }
-        .htag {
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--gris-300); padding: 0.4rem 1rem;
-            border-radius: 50px; font-size: 0.85rem; font-weight: 500;
-            transition: all 0.3s var(--ease);
-        }
-        .htag:hover {
-            border-color: var(--or);
-            color: var(--or);
-            background: var(--or-glow);
-        }
+        /* ===== PUBLICATIONS ===== */
+        .publications{padding:var(--section-padding);background:var(--bg-section)}
+        .publications__subtitle{text-align:center;font-size:16px;color:var(--text-secondary);margin-top:-40px;margin-bottom:48px;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.6}
+        .publications__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px}
+        .pub-card{background:var(--bg-white);border-radius:var(--radius-md);padding:28px;border:1px solid var(--border);transition:transform .3s ease,box-shadow .3s ease;display:flex;flex-direction:column;height:100%}
+        .pub-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover)}
+        .pub-card__type{font-size:11px;font-weight:600;color:var(--text-secondary);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}
+        .pub-card__title{font-family:var(--font-heading);font-size:17px;font-weight:600;color:var(--text-primary);margin-bottom:12px;line-height:1.4}
+        .pub-card__excerpt{font-size:14px;color:var(--text-secondary);line-height:1.6;margin-bottom:20px;flex-grow:1}
+        .pub-card__link{font-size:14px;font-weight:600;color:var(--primary);transition:letter-spacing .3s ease;margin-top:auto}
+        .pub-card__link:hover{letter-spacing:.5px}
+        .pub-card__link span{transition:margin-left .3s ease;margin-left:4px}
+        .pub-card__link:hover span{margin-left:8px}
+        .publications__cta{text-align:center}
 
-        .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+        /* ===== CONTACT ===== */
+        .contact{padding:var(--section-padding);background:var(--bg-dark)}
+        .contact__subtitle{text-align:center;font-size:18px;color:#9CA3AF;margin-top:-40px;margin-bottom:60px}
+        .contact__grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:flex-start}
+        .contact__info-list{display:flex;flex-direction:column;gap:20px}
+        .contact__info-item{display:flex;align-items:center;gap:16px}
+        .contact__info-label{font-size:12px;font-weight:600;color:#6B7280;text-transform:uppercase;letter-spacing:.5px;min-width:80px}
+        .contact__info-item a,.contact__info-item span{font-size:16px;color:#D1D5DB;transition:color .3s ease}
+        .contact__info-item a:hover{color:var(--primary)}
+        .contact__cv-btn{margin-top:32px}
+        .contact__form{display:flex;flex-direction:column;gap:24px}
+        .form-group label{display:block;font-size:13px;font-weight:500;color:#9CA3AF;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+        .form-group input,.form-group textarea{width:100%;background:transparent;border:none;border-bottom:2px solid var(--border);color:var(--text-light);font-family:var(--font-body);font-size:16px;padding:10px 0;transition:border-color .3s ease;outline:none}
+        .form-group input::placeholder,.form-group textarea::placeholder{color:#6B7280}
+        .form-group input:focus,.form-group textarea:focus{border-color:var(--primary)}
+        .form-group textarea{resize:vertical;min-height:100px}
+        .contact__form .btn{width:100%;justify-content:center;padding:16px;font-size:16px}
 
-        .btn {
-            display: inline-flex; align-items: center; gap: 0.6rem;
-            padding: 0.9rem 2rem; border-radius: 50px;
-            font-size: 0.95rem; font-weight: 600;
-            text-decoration: none; border: none; cursor: pointer;
-            transition: all 0.3s var(--ease);
-            letter-spacing: 0.01em;
-        }
-        .btn-gold { background: var(--or); color: var(--noir); }
-        .btn-gold:hover {
-            background: var(--or-light); transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(200,164,85,0.35);
-        }
-        .btn-outline {
-            background: transparent; color: var(--blanc);
-            border: 1.5px solid rgba(255,255,255,0.2);
-        }
-        .btn-outline:hover {
-            border-color: var(--or); color: var(--or);
-            background: var(--or-glow);
-            transform: translateY(-3px);
-        }
-        .btn-dark { background: var(--noir); color: var(--blanc); }
-        .btn-dark:hover {
-            background: var(--gris-900); transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-        }
-        .btn-white {
-            background: var(--blanc); color: var(--noir);
-            border: 1.5px solid var(--gris-200);
-        }
-        .btn-white:hover {
-            border-color: var(--noir); transform: translateY(-3px);
-            box-shadow: var(--shadow-card-hover);
-        }
+        /* ===== FOOTER ===== */
+        .footer{background:#050505;padding:40px 0;text-align:center}
+        .footer__content{display:flex;flex-direction:column;align-items:center;gap:16px}
+        .footer__copy{font-size:14px;color:var(--text-secondary)}
+        .footer__links{display:flex;gap:24px}
+        .footer__links a{font-size:13px;color:var(--text-secondary);transition:color .3s ease}
+        .footer__links a:hover{color:var(--primary)}
+        .footer__top-link{font-size:13px;color:var(--text-secondary);transition:color .3s ease}
+        .footer__top-link:hover{color:var(--primary)}
 
-        /* Hero Card */
-        .hero-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: var(--radius);
-            padding: 3rem 2.5rem;
-            backdrop-filter: blur(20px);
-            text-align: center;
-            position: relative;
-        }
-        .hero-card::before {
-            content:''; position:absolute; top:0; left:0; right:0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--or), var(--or-light), var(--or));
-            border-radius: var(--radius) var(--radius) 0 0;
-        }
-        .hero-initials {
-            width: 100px; height: 100px;
-            background: linear-gradient(135deg, var(--or-dark), var(--or-light));
-            border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-family: var(--font-display);
-            font-size: 2.4rem; font-weight: 900; color: var(--noir);
-            box-shadow: 0 8px 30px rgba(200,164,85,0.3);
-        }
-        .hero-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.4rem; color: var(--blanc); margin-bottom: 0.3rem;
-        }
-        .hero-card .sub { font-size: 0.95rem; color: var(--or-light); font-weight: 500; margin-bottom: 2rem; }
+        /* BACK TO TOP */
+        .back-to-top{position:fixed;bottom:32px;right:32px;width:48px;height:48px;border-radius:50%;background:var(--primary);color:var(--text-light);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,102,255,.3);opacity:0;visibility:hidden;transform:translateY(20px);transition:opacity .3s ease,visibility .3s ease,transform .3s ease,background .3s ease;z-index:900;font-size:20px;font-weight:700;line-height:1}
+        .back-to-top.visible{opacity:1;visibility:visible;transform:translateY(0)}
+        .back-to-top:hover{background:var(--primary-light)}
 
-        .card-stats {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .card-stat {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: var(--radius-sm);
-            padding: 1rem 0.8rem;
-        }
-        .card-stat-num {
-            font-family: var(--font-mono);
-            font-size: 1.5rem; font-weight: 700;
-            color: var(--or-light); line-height: 1;
-            margin-bottom: 0.3rem;
-        }
-        .card-stat-label {
-            font-size: 0.72rem; color: var(--gris-500);
-            text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600;
+        /* ===== RESPONSIVE TABLET ===== */
+        @media(max-width:1024px){
+            .hero__title{font-size:44px}
+            .hero__subtitle{font-size:26px}
+            .hero__photo{width:260px;height:260px}
+            .hero .container{gap:40px}
+            .skills__grid{grid-template-columns:repeat(2,1fr)}
+            .metrics__grid{gap:20px}
+            .metric-card{padding:28px}
+            .metric-card__number{font-size:40px}
+            .publications__grid{grid-template-columns:repeat(2,1fr)}
         }
 
-        .card-links { display: flex; justify-content: center; gap: 0.8rem; }
-        .card-links a {
-            width: 42px; height: 42px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--gris-400); text-decoration: none;
-            font-size: 1rem; transition: all 0.3s var(--ease);
-        }
-        .card-links a:hover {
-            background: var(--or); color: var(--noir);
-            border-color: var(--or);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(200,164,85,0.3);
-        }
-
-        /* ========== SECTIONS COMMUNES ========== */
-        section { padding: 7rem 2.5rem; }
-        .inner { max-width: 1100px; margin: 0 auto; }
-
-        .sec-header { margin-bottom: 4rem; }
-        .sec-label {
-            font-family: var(--font-mono);
-            font-size: 0.8rem; font-weight: 600;
-            letter-spacing: 0.15em; text-transform: uppercase;
-            color: var(--or); margin-bottom: 0.6rem;
-        }
-        .sec-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 800; line-height: 1.15;
-            letter-spacing: -0.02em;
-        }
-        .sec-title-dark { color: var(--noir); }
-        .sec-title-light { color: var(--blanc); }
-        .sec-line {
-            width: 50px; height: 3px; margin-top: 1.2rem;
-            background: linear-gradient(90deg, var(--or), var(--or-light));
-            border-radius: 3px;
-        }
-
-        .bg-cream { background: var(--creme); }
-        .bg-white { background: var(--blanc); }
-        .bg-dark { background: var(--noir-2); color: var(--gris-300); }
-        .bg-dark .sec-label { color: var(--or-light); }
-
-        /* ========== ABOUT ========== */
-        .about-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 4rem; align-items: start;
-        }
-        .about-text { font-size: 1.05rem; color: var(--gris-600); }
-        .about-text p { margin-bottom: 1.2rem; line-height: 1.85; }
-        .about-text strong { color: var(--noir); font-weight: 700; }
-
-        .about-cards { display: flex; flex-direction: column; gap: 1.2rem; }
-        .acard {
-            display: flex; gap: 1.2rem; align-items: flex-start;
-            padding: 1.5rem; background: var(--blanc);
-            border: 1px solid var(--gris-100);
-            border-radius: var(--radius);
-            transition: all 0.3s var(--ease);
-        }
-        .acard:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-card-hover);
-            border-color: var(--or);
-        }
-        .acard-icon {
-            width: 52px; height: 52px; min-width: 52px;
-            border-radius: var(--radius-sm);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.3rem;
-        }
-        .acard-icon-blue { background: #EBF0FF; color: #3B5998; }
-        .acard-icon-gold { background: var(--or-glow); color: var(--or-dark); }
-        .acard-icon-green { background: var(--vert-pale); color: var(--vert); }
-        .acard-icon-purple { background: #F0EBFF; color: #6B4FBB; }
-
-        .acard h4 { font-size: 1rem; font-weight: 700; color: var(--noir); margin-bottom: 0.2rem; }
-        .acard p { font-size: 0.9rem; color: var(--gris-500); line-height: 1.6; }
-
-        /* ========== STATS ========== */
-        .stats-section {
-            background: linear-gradient(135deg, var(--noir) 0%, var(--noir-3) 100%);
-            padding: 5rem 2.5rem;
-            position: relative; overflow: hidden;
-        }
-        .stats-section::before {
-            content:''; position:absolute; inset:0;
-            background: radial-gradient(ellipse at 30% 50%, rgba(200,164,85,0.06) 0%, transparent 60%);
-        }
-        .stats-row {
-            max-width: 1100px; margin: 0 auto;
-            display: grid; grid-template-columns: repeat(5,1fr);
-            gap: 2rem; text-align: center;
-            position: relative; z-index:1;
-        }
-        .stat {}
-        .stat-num {
-            font-family: var(--font-mono);
-            font-size: 2.8rem; font-weight: 700;
-            color: var(--or-light); line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-        .stat-lbl {
-            font-size: 0.82rem; color: rgba(255,255,255,0.45);
-            font-weight: 500; text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* ========== EXPÉRIENCES ========== */
-        .exp-cards { display: flex; flex-direction: column; gap: 2.5rem; }
-
-        .exp-card {
-            background: var(--blanc);
-            border: 1px solid var(--gris-100);
-            border-radius: var(--radius);
-            padding: 3rem;
-            transition: all 0.4s var(--ease);
-            position: relative; overflow: hidden;
-        }
-        .exp-card::after {
-            content:''; position:absolute; top:0; left:0; bottom:0;
-            width: 4px; background: linear-gradient(to bottom, var(--or), var(--or-light));
-            opacity: 0; transition: opacity 0.4s var(--ease);
-        }
-        .exp-card:hover { box-shadow: var(--shadow-card-hover); }
-        .exp-card:hover::after { opacity: 1; }
-
-        .exp-top {
-            display: flex; justify-content: space-between;
-            align-items: flex-start; margin-bottom: 1.2rem;
-            flex-wrap: wrap; gap: 0.8rem;
-        }
-        .exp-date {
-            font-family: var(--font-mono);
-            font-size: 0.82rem; font-weight: 600;
-            color: var(--or-dark); background: var(--or-glow);
-            padding: 0.35rem 1rem; border-radius: 50px;
-            white-space: nowrap;
-        }
-        .exp-role {
-            font-family: var(--font-display);
-            font-size: 1.4rem; color: var(--noir);
-            line-height: 1.3; margin-bottom: 0.3rem;
-        }
-        .exp-company {
-            font-size: 1rem; color: var(--gris-500); font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        .exp-context {
-            font-size: 1rem; color: var(--gris-600);
-            padding: 1.2rem 1.5rem;
-            background: var(--gris-50);
-            border-left: 3px solid var(--or);
-            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-            margin-bottom: 1.5rem; line-height: 1.7;
-            font-style: italic;
-        }
-        .exp-context strong { color: var(--noir); font-style: normal; }
-
-        .exp-cat {
-            font-family: var(--font-mono);
-            font-size: 0.78rem; font-weight: 700;
-            letter-spacing: 0.1em; text-transform: uppercase;
-            color: var(--or-dark);
-            margin-top: 1.5rem; margin-bottom: 0.7rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 1px solid var(--gris-100);
-        }
-
-        .exp-items { list-style: none; }
-        .exp-items li {
-            position: relative; padding-left: 1.5rem;
-            margin-bottom: 0.6rem; font-size: 1rem;
-            color: var(--gris-600); line-height: 1.7;
-        }
-        .exp-items li::before {
-            content:''; position:absolute; left:0; top:0.65rem;
-            width: 7px; height: 7px; background: var(--or);
-            border-radius: 50%;
-        }
-        .metric {
-            font-family: var(--font-mono);
-            font-weight: 700; color: var(--noir);
-            background: var(--or-glow);
-            padding: 0.15rem 0.5rem; border-radius: var(--radius-xs);
-            font-size: 0.95rem;
-        }
-
-        .exp-transfer {
-            font-size: 0.92rem; color: var(--gris-500);
-            font-style: italic; margin-top: 0.8rem;
-            padding-left: 1.5rem;
-        }
-
-        /* ========== COMPÉTENCES ========== */
-        .skills-grid {
-            display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem;
-        }
-        .skill-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: var(--radius);
-            padding: 2.5rem 2rem;
-            transition: all 0.3s var(--ease);
-        }
-        .skill-card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(200,164,85,0.3);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-        }
-
-        .sk-icon {
-            width: 56px; height: 56px; border-radius: var(--radius-sm);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; margin-bottom: 1.5rem;
-        }
-        .sk-icon-1 { background: rgba(200,164,85,0.15); color: var(--or-light); }
-        .sk-icon-2 { background: rgba(59,89,152,0.2); color: #7B9FD4; }
-        .sk-icon-3 { background: rgba(52,199,123,0.15); color: var(--vert); }
-
-        .skill-card h3 {
-            font-size: 1.1rem; font-weight: 700;
-            color: var(--blanc); margin-bottom: 1.5rem;
-        }
-
-        .bar-group { margin-bottom: 1rem; }
-        .bar-label {
-            display: flex; justify-content: space-between;
-            font-size: 0.88rem; margin-bottom: 0.4rem;
-        }
-        .bar-label span:first-child { color: var(--gris-300); font-weight: 500; }
-        .bar-label span:last-child { color: var(--or-light); font-family: var(--font-mono); font-weight: 600; font-size: 0.82rem; }
-
-        .bar-track {
-            height: 8px; background: rgba(255,255,255,0.08);
-            border-radius: 4px; overflow: hidden;
-        }
-        .bar-fill {
-            height: 100%; border-radius: 4px;
-            width: 0; transition: width 1.8s var(--ease);
-        }
-        .fill-or { background: linear-gradient(90deg, var(--or-dark), var(--or-light)); }
-        .fill-bl { background: linear-gradient(90deg, #3B5998, #7B9FD4); }
-        .fill-gr { background: linear-gradient(90deg, #2D9F6F, #34C77B); }
-
-        /* ========== PROJETS ========== */
-        .proj-grid {
-            display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem;
-        }
-        .proj-card {
-            background: var(--blanc);
-            border: 1px solid var(--gris-100);
-            border-radius: var(--radius);
-            padding: 2.5rem 2rem;
-            transition: all 0.3s var(--ease);
-            display: flex; flex-direction: column;
-        }
-        .proj-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-card-hover);
-            border-color: var(--or);
-        }
-        .proj-emoji { font-size: 2.5rem; margin-bottom: 1rem; }
-        .proj-card h3 {
-            font-size: 1.1rem; font-weight: 700;
-            color: var(--noir); margin-bottom: 0.6rem; line-height: 1.3;
-        }
-        .proj-card p {
-            font-size: 0.95rem; color: var(--gris-500);
-            line-height: 1.7; flex-grow: 1;
-        }
-        .proj-tag {
-            display: inline-block;
-            font-family: var(--font-mono);
-            font-size: 0.75rem; font-weight: 600;
-            color: var(--or-dark); background: var(--or-glow);
-            padding: 0.25rem 0.8rem; border-radius: 50px;
-            margin-top: 1rem;
-        }
-
-        /* ========== CITATION ========== */
-        .quote-sec {
-            background: var(--blanc);
-            padding: 6rem 2.5rem; text-align: center;
-            border-top: 1px solid var(--gris-100);
-            border-bottom: 1px solid var(--gris-100);
-        }
-        .quote-sec blockquote {
-            max-width: 750px; margin: 0 auto;
-            font-family: var(--font-display);
-            font-size: clamp(1.4rem, 3vw, 2rem);
-            font-style: italic;
-            color: var(--noir); line-height: 1.5;
-            position: relative;
-        }
-        .quote-sec blockquote::before {
-            content: '"'; font-size: 6rem;
-            color: var(--or); opacity: 0.3;
-            position: absolute; top: -2.5rem; left: -1rem;
-            font-family: var(--font-display);
-            line-height: 1;
-        }
-        .quote-author {
-            margin-top: 1.5rem;
-            font-family: var(--font-body);
-            font-size: 0.95rem; color: var(--or);
-            font-weight: 600; font-style: normal;
-        }
-
-        /* ========== FORMATION ========== */
-        .form-list { display: flex; flex-direction: column; gap: 1.2rem; }
-        .form-card {
-            display: flex; gap: 2rem; align-items: center;
-            padding: 1.8rem 2rem;
-            background: var(--blanc);
-            border: 1px solid var(--gris-100);
-            border-radius: var(--radius);
-            transition: all 0.3s var(--ease);
-        }
-        .form-card:hover { box-shadow: var(--shadow-card); border-color: var(--gris-200); }
-        .form-year {
-            font-family: var(--font-mono);
-            font-size: 0.82rem; font-weight: 600;
-            color: var(--or-dark); background: var(--or-glow);
-            padding: 0.4rem 1rem; border-radius: 50px;
-            white-space: nowrap;
-        }
-        .form-info h3 { font-size: 1.05rem; font-weight: 700; color: var(--noir); margin-bottom: 0.2rem; line-height: 1.4; }
-        .form-info p { font-size: 0.92rem; color: var(--gris-500); }
-
-        .cl-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 2rem; margin-top: 3rem;
-        }
-        .cl-card {
-            background: var(--blanc); border: 1px solid var(--gris-100);
-            border-radius: var(--radius); padding: 2rem;
-        }
-        .cl-card h4 {
-            font-size: 1rem; font-weight: 700; color: var(--noir);
-            margin-bottom: 1rem;
-            display: flex; align-items: center; gap: 0.6rem;
-        }
-        .cl-card h4 i { color: var(--or); font-size: 1.1rem; }
-        .cl-card li {
-            list-style: none; font-size: 0.95rem; color: var(--gris-600);
-            padding: 0.4rem 0; padding-left: 1.2rem; position: relative;
-        }
-        .cl-card li::before {
-            content:'→'; position:absolute; left:0; color: var(--or); font-weight: 700;
-        }
-
-        /* ========== CONTACT ========== */
-        .contact-grid {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 4rem; align-items: start;
-        }
-        .contact-text h3 {
-            font-family: var(--font-display);
-            font-size: 2rem; color: var(--noir); margin-bottom: 1rem;
-        }
-        .contact-text p {
-            font-size: 1.05rem; color: var(--gris-500);
-            line-height: 1.85; margin-bottom: 2rem;
-        }
-        .contact-text strong { color: var(--noir); }
-
-        .contact-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-        .c-cards { display: flex; flex-direction: column; gap: 1rem; }
-        .c-card {
-            display: flex; align-items: center; gap: 1.2rem;
-            padding: 1.3rem 1.5rem;
-            background: var(--blanc); border: 1px solid var(--gris-100);
-            border-radius: var(--radius);
-            text-decoration: none; color: var(--gris-600);
-            transition: all 0.3s var(--ease);
-        }
-        .c-card:hover {
-            border-color: var(--or); transform: translateX(6px);
-            box-shadow: var(--shadow-card);
-        }
-        .c-card i { font-size: 1.2rem; color: var(--or); width: 24px; text-align: center; }
-        .c-card-info { display: flex; flex-direction: column; }
-        .c-card-label {
-            font-size: 0.72rem; color: var(--gris-400);
-            text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700;
-        }
-        .c-card-value { font-size: 1rem; font-weight: 600; color: var(--noir); }
-
-        /* ========== INTERESTS ========== */
-        .interests {
-            display: flex; justify-content: center; gap: 2.5rem;
-            flex-wrap: wrap; padding: 2.5rem;
-            background: var(--gris-50);
-            border-top: 1px solid var(--gris-100);
-        }
-        .int-item {
-            display: flex; align-items: center; gap: 0.6rem;
-            font-size: 0.95rem; color: var(--gris-500); font-weight: 500;
-        }
-        .int-item i { color: var(--or); font-size: 1rem; }
-
-        /* ========== FOOTER ========== */
-        footer {
-            background: var(--noir); padding: 2.5rem; text-align: center;
-        }
-        footer p { font-size: 0.85rem; color: var(--gris-600); }
-        footer a { color: var(--or-light); text-decoration: none; }
-
-        /* ========== FLOATING CTA ========== */
-        .float-cta {
-            position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-            opacity: 0; transform: translateY(20px) scale(0.95);
-            transition: all 0.5s var(--ease); pointer-events: none;
-        }
-        .float-cta.show {
-            opacity: 1; transform: translateY(0) scale(1); pointer-events: all;
-        }
-        .float-cta a {
-            display: flex; align-items: center; gap: 0.6rem;
-            background: var(--or); color: var(--noir);
-            padding: 0.9rem 1.8rem; border-radius: 50px;
-            text-decoration: none; font-size: 0.92rem; font-weight: 700;
-            box-shadow: 0 8px 30px rgba(200,164,85,0.35);
-            transition: all 0.3s var(--ease);
-        }
-        .float-cta a:hover {
-            background: var(--or-light); transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(200,164,85,0.45);
-        }
-
-        /* ========== ANIMATIONS ========== */
-        .reveal {
-            opacity: 0; transform: translateY(35px);
-            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-        }
-        .reveal.visible { opacity: 1; transform: translateY(0); }
-
-        /* ========== RESPONSIVE ========== */
-        @media (max-width:1024px) {
-            .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-            .hero-card { max-width: 400px; margin: 0 auto; }
-            .about-grid { grid-template-columns: 1fr; }
-            .skills-grid { grid-template-columns: 1fr 1fr; }
-            .proj-grid { grid-template-columns: 1fr 1fr; }
-        }
-        @media (max-width:768px) {
-            .nav-links {
-                display:none; position:absolute; top:68px; left:0; right:0;
-                background: rgba(255,255,255,0.98);
-                backdrop-filter: blur(20px);
-                flex-direction: column; padding: 2rem; gap: 1.2rem;
-                border-bottom: 1px solid var(--gris-100);
-                box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-            }
-            .nav-links.active { display: flex; }
-            .nav-links a { color: var(--gris-600) !important; font-size: 1rem; }
-            .hamburger { display: flex; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .stats-row { grid-template-columns: repeat(3,1fr); }
-            .cl-grid { grid-template-columns: 1fr; }
-            section { padding: 5rem 1.5rem; }
-        }
-        @media (max-width:600px) {
-            body { font-size: 16px; }
-            .hero { padding: 7rem 1.5rem 4rem; }
-            .proj-grid { grid-template-columns: 1fr; }
-            .stats-row { grid-template-columns: 1fr 1fr; }
-            .exp-card { padding: 2rem 1.5rem; }
-            .form-card { flex-direction: column; gap: 0.5rem; align-items: flex-start; }
+        /* ===== RESPONSIVE MOBILE ===== */
+        @media(max-width:768px){
+            :root{--section-padding:60px 0}
+            .section-title{font-size:28px;margin-bottom:40px}
+            .navbar__links{display:none}
+            .hamburger{display:flex}
+            .mobile-menu{display:flex}
+            .hero{padding:100px 0 60px}
+            .hero .container{flex-direction:column-reverse;text-align:center;gap:32px}
+            .hero__title{font-size:36px}
+            .hero__subtitle{font-size:24px}
+            .hero__pitch{font-size:16px;margin-left:auto;margin-right:auto}
+            .hero__buttons{justify-content:center}
+            .hero__socials{justify-content:center}
+            .hero__photo{width:200px;height:200px}
+            .hero__scroll-indicator{display:none}
+            .metrics__grid{flex-direction:column;align-items:center}
+            .metric-card{max-width:100%;width:100%}
+            .about__grid{flex-direction:column;gap:32px}
+            .timeline::before{left:16px}
+            .timeline__item{width:100%;left:0!important;text-align:left!important;padding-left:52px!important;padding-right:0!important}
+            .timeline__item::before{left:10px!important;right:auto!important}
+            .exp-card__title{font-size:18px}
+            .skills__grid{grid-template-columns:1fr}
+            .education__extra{grid-template-columns:1fr}
+            .publications__grid{grid-template-columns:1fr}
+            .contact__grid{grid-template-columns:1fr;gap:48px}
+            .btn{padding:12px 22px;font-size:15px}
+            .back-to-top{bottom:20px;right:20px;width:42px;height:42px}
         }
     </style>
 </head>
 <body>
 
-    <!-- NAV -->
-    <nav id="nav">
-        <div class="nav-inner">
-            <a href="#" class="nav-logo">Yohan<span>.</span></a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#about">À propos</a></li>
-                <li><a href="#xp">Expériences</a></li>
-                <li><a href="#skills">Compétences</a></li>
-                <li><a href="#projects">Projets</a></li>
-                <li><a href="#edu">Formation</a></li>
-                <li><a href="#contact" class="nav-cta-btn">Contact</a></li>
-            </ul>
-            <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')">
-                <span></span><span></span><span></span>
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
+        <div class="container">
+            <a href="#hero" class="navbar__logo" aria-label="Retour à l'accueil">YP</a>
+            <div class="navbar__links" role="menubar">
+                <a href="#about" role="menuitem">À propos</a>
+                <a href="#experience" role="menuitem">Parcours</a>
+                <a href="#skills" role="menuitem">Compétences</a>
+                <a href="#education" role="menuitem">Formation</a>
+                <a href="#contact" role="menuitem">Contact</a>
+                <a href="cv-yohan-palomba.pdf" download class="navbar__cta" aria-label="Télécharger le CV au format PDF">Télécharger CV</a>
             </div>
+            <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu mobile">
+        <a href="#about">À propos</a>
+        <a href="#experience">Parcours</a>
+        <a href="#skills">Compétences</a>
+        <a href="#education">Formation</a>
+        <a href="#contact">Contact</a>
+        <a href="cv-yohan-palomba.pdf" download class="navbar__cta">Télécharger CV</a>
+    </div>
+
     <!-- HERO -->
-    <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-text">
-                <div class="hero-badge reveal"><span class="dot"></span> Disponible — En recherche active</div>
-                <h1 class="hero-name reveal">Yohan<br><span class="gold">Palomba</span></h1>
-                <p class="hero-title reveal">Product Manager · Hardware & Software</p>
-                <p class="hero-desc reveal">
-                    +2 ans de pilotage de produits technologiques combinant hardware et software 
-                    — capteurs connectés, logiciels embarqués, machines servo-motorisées. 
-                    L'utilisateur final au centre de chaque décision.
-                </p>
-                <div class="hero-tags reveal">
-                    <span class="htag">Roadmap Produit</span>
-                    <span class="htag">Hardware & Software</span>
-                    <span class="htag">Agile / Scrum</span>
-                    <span class="htag">Data-Driven</span>
-                    <span class="htag">Ergonomie</span>
-                    <span class="htag">Paris</span>
+    <section class="hero" id="hero" aria-label="Présentation">
+        <div class="container">
+            <div class="hero__content">
+                <div class="hero__badge">Paris, France</div>
+                <h1 class="hero__title">Yohan Palomba</h1>
+                <h2 class="hero__subtitle">Product Manager</h2>
+                <p class="hero__pitch">Je transforme les besoins utilisateurs en produits technologiques performants. Spécialisé hardware &amp; software, j'allie vision stratégique, approche data-driven et méthodologies agiles.</p>
+                <div class="hero__buttons">
+                    <a href="#experience" class="btn btn--primary">Découvrir mon parcours</a>
+                    <a href="#contact" class="btn btn--outline">Me contacter</a>
                 </div>
-                <div class="hero-btns reveal">
-                    <a href="mailto:yocellier@gmail.com" class="btn btn-gold"><i class="fas fa-envelope"></i> Me contacter</a>
-                    <a href="cv-yohan-palomba.pdf" download class="btn btn-outline"><i class="fas fa-download"></i> Télécharger CV</a>
+                <div class="hero__socials">
+                    <a href="https://linkedin.com/in/yohan-palomba-58b0b5191" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:yocellier@gmail.com">Email</a>
+                    <a href="tel:+33651744269">Téléphone</a>
                 </div>
             </div>
+            <div class="hero__photo-wrapper">
+                <img src="photo-yohan.jpg" alt="Photo de Yohan Palomba, Product Manager" class="hero__photo" width="320" height="320">
+            </div>
+        </div>
+        <div class="hero__scroll-indicator" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="hero__scroll-arrow"></div>
+        </div>
+    </section>
 
-            <div class="hero-card reveal">
-                <div class="hero-initials">YP</div>
-                <h3>Yohan Palomba</h3>
-                <p class="sub">Product Manager</p>
-                <div class="card-stats">
-                    <div class="card-stat">
-                        <div class="card-stat-num">+35%</div>
-                        <div class="card-stat-label">Croissance CA</div>
-                    </div>
-                    <div class="card-stat">
-                        <div class="card-stat-num">+12</div>
-                        <div class="card-stat-label">Points NPS</div>
-                    </div>
-                    <div class="card-stat">
-                        <div class="card-stat-num">150+</div>
-                        <div class="card-stat-label">Leads générés</div>
-                    </div>
-                    <div class="card-stat">
-                        <div class="card-stat-num">5</div>
-                        <div class="card-stat-label">Partenariats</div>
-                    </div>
+    <!-- CHIFFRES CLES -->
+    <section class="metrics" id="metrics" aria-label="Chiffres clés">
+        <div class="container">
+            <h2 class="section-title reveal">Impact &amp; Résultats</h2>
+            <div class="metrics__grid stagger-children">
+                <div class="metric-card reveal">
+                    <div class="metric-card__number" data-target="35" data-prefix="+" data-suffix="%">0</div>
+                    <div class="metric-card__label">Croissance du CA</div>
                 </div>
-                <div class="card-links">
-                    <a href="mailto:yocellier@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:+33651744269" title="Téléphone"><i class="fas fa-phone"></i></a>
-                    <a href="https://www.linkedin.com/in/yohan-palomba" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <div class="metric-card reveal">
+                    <div class="metric-card__number" data-target="150" data-prefix="+" data-suffix="">0</div>
+                    <div class="metric-card__label">Leads qualifiés générés</div>
+                </div>
+                <div class="metric-card reveal">
+                    <div class="metric-card__number" data-target="70" data-prefix="-" data-suffix="%">0</div>
+                    <div class="metric-card__label">Temps de recherche d'information</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- STATS -->
-    <div class="stats-section">
-        <div class="stats-row">
-            <div class="stat reveal"><div class="stat-num">+35%</div><div class="stat-lbl">Croissance CA</div></div>
-            <div class="stat reveal"><div class="stat-num">+12 pts</div><div class="stat-lbl">Score NPS</div></div>
-            <div class="stat reveal"><div class="stat-num">−20%</div><div class="stat-lbl">Non-conformités</div></div>
-            <div class="stat reveal"><div class="stat-num">150+</div><div class="stat-lbl">Leads qualifiés</div></div>
-            <div class="stat reveal"><div class="stat-num">−70%</div><div class="stat-lbl">Temps recherche</div></div>
-        </div>
-    </div>
-
-    <!-- ABOUT -->
-    <section id="about" class="bg-cream">
-        <div class="inner">
-            <div class="sec-header reveal">
-                <div class="sec-label">// À propos</div>
-                <h2 class="sec-title sec-title-dark">Ce qui me différencie</h2>
-                <div class="sec-line"></div>
-            </div>
-            <div class="about-grid">
-                <div class="about-text reveal">
-                    <p>
-                        Formé à l'<strong>interface homme-matériel</strong> et à l'ergonomie, j'ai structuré de zéro 
-                        la fonction Product Management chez un fabricant français d'équipements sportifs — 
-                        un <strong>poste pionnier</strong> où j'ai dû tout construire.
-                    </p>
-                    <p>
-                        Mon approche <strong>data-driven</strong> et ma maîtrise des <strong>méthodologies agiles</strong> 
-                        me permettent de coordonner efficacement ingénieurs, designers et commerciaux 
-                        pour livrer des produits utiles, fiables et adoptés.
-                    </p>
-                    <p>
-                        Je ne suis pas un PM théorique. J'ai été en usine, sur les terrains de sport, 
-                        dans les salons internationaux pour comprendre les <strong>vrais besoins des utilisateurs</strong> 
-                        — et les traduire en produits concrets.
-                    </p>
+    <!-- A PROPOS -->
+    <section class="about" id="about" aria-label="À propos">
+        <div class="container">
+            <h2 class="section-title reveal">À propos</h2>
+            <div class="about__grid">
+                <div class="about__text reveal">
+                    <p>Product Manager avec plus de 2 ans d'expérience en pilotage de produits technologiques combinant hardware et software (capteurs connectés, logiciels embarqués, machines servo-motorisées). Formé à l'interface homme-matériel et à l'ergonomie, je place l'utilisateur final au centre de chaque décision produit. Mon approche data-driven et ma maîtrise des méthodologies agiles me permettent de coordonner efficacement ingénieurs, designers et commerciaux pour livrer des produits utiles, fiables et adoptés.</p>
                 </div>
-                <div class="about-cards reveal">
-                    <div class="acard">
-                        <div class="acard-icon acard-icon-gold"><i class="fas fa-microchip"></i></div>
-                        <div><h4>Hardware & Software</h4><p>Capteurs connectés, logiciels embarqués, machines servo-motorisées</p></div>
-                    </div>
-                    <div class="acard">
-                        <div class="acard-icon acard-icon-blue"><i class="fas fa-rocket"></i></div>
-                        <div><h4>Poste pionnier</h4><p>Création et structuration de la fonction PM from scratch</p></div>
-                    </div>
-                    <div class="acard">
-                        <div class="acard-icon acard-icon-green"><i class="fas fa-globe-europe"></i></div>
-                        <div><h4>Vision internationale</h4><p>China Sport Show, FITEX Paris, Consortium export 7 entreprises</p></div>
-                    </div>
-                    <div class="acard">
-                        <div class="acard-icon acard-icon-purple"><i class="fas fa-medal"></i></div>
-                        <div><h4>Haute performance</h4><p>JO Milan 2026, Provence Rugby, Metz Handball</p></div>
+                <div class="about__tags reveal">
+                    <div class="about__tags-grid">
+                        <span class="tag">Roadmap Produit</span>
+                        <span class="tag">Scrum &amp; Kanban</span>
+                        <span class="tag">Hardware/Software</span>
+                        <span class="tag">Data-Driven</span>
+                        <span class="tag">UX Research</span>
+                        <span class="tag">Cahier des charges</span>
+                        <span class="tag">Coordination technique</span>
+                        <span class="tag">Cycle de vie produit</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- EXPÉRIENCES -->
-    <section id="xp" class="bg-white">
-        <div class="inner">
-            <div class="sec-header reveal">
-                <div class="sec-label">// Parcours</div>
-                <h2 class="sec-title sec-title-dark">Expériences</h2>
-                <div class="sec-line"></div>
-            </div>
-            <div class="exp-cards">
-                <!-- LAROQ -->
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div>
-                            <div class="exp-role">Chef de Produit — Gammes Hardware & Software</div>
-                            <div class="exp-company">FizFab Group / LAROQ · Fabricant français</div>
-                        </div>
-                        <span class="exp-date">2024 → Aujourd'hui</span>
-                    </div>
-                    <div class="exp-context">
-                        Création de la fonction Product Management (poste pionnier) pour deux gammes : 
-                        <strong>Phyling</strong> (capteurs connectés + logiciel d'analyse) et <strong>Eliga</strong> (machines servo-motorisées).
-                    </div>
-                    <div class="exp-cat">Stratégie produit & Roadmap</div>
-                    <ul class="exp-items">
-                        <li>Définir et piloter la roadmap en arbitrant besoins utilisateurs, contraintes techniques et objectifs commerciaux</li>
-                        <li>Cahiers des charges fonctionnels et techniques en approche centrée utilisateur</li>
-                        <li>Cycle de vie complet : idéation → prototypage → tests → validation → lancement → suivi</li>
-                    </ul>
-                    <div class="exp-cat">Pilotage & Coordination</div>
-                    <ul class="exp-items">
-                        <li>Coordination Scrum : équipes internes, partenaires technologiques, fournisseurs internationaux</li>
-                        <li>Qualification fournisseurs : <span class="metric">−20% non-conformités</span></li>
-                    </ul>
-                    <div class="exp-cat">Utilisateur & Amélioration continue</div>
-                    <ul class="exp-items">
-                        <li>Boucle de feedback structurée : <span class="metric">NPS +12 points</span></li>
-                        <li>Documentation centralisée : <span class="metric">−70% temps de recherche</span></li>
-                    </ul>
-                    <div class="exp-cat">Commercial & Communication</div>
-                    <ul class="exp-items">
-                        <li>Go-to-market : <span class="metric">+35% croissance CA</span></li>
-                        <li>Contenu digital : <span class="metric">+60% engagement</span></li>
-                        <li>Salons & événements : <span class="metric">+150 leads qualifiés</span></li>
-                        <li>Développement de <span class="metric">5 partenariats stratégiques</span></li>
-                    </ul>
-                </div>
+    <!-- PARCOURS -->
+    <section class="experience" id="experience" aria-label="Parcours professionnel">
+        <div class="container">
+            <h2 class="section-title reveal">Parcours &amp; Expériences</h2>
+            <div class="timeline">
+                <!-- EXP 1 -->
+                <div class="timeline__item reveal-left">
+                    <div class="exp-card exp-card--main">
+                        <span class="exp-card__badge">Poste actuel</span>
+                        <div class="exp-card__period">Janvier 2024 — Aujourd'hui</div>
+                        <h3 class="exp-card__title">Chef de Produit — Développement de Gammes Technologiques</h3>
+                        <div class="exp-card__company">FIZFAB GROUP / LAROQ</div>
+                        <p class="exp-card__context">Création et structuration de la fonction Product Management (poste pionnier) pour deux gammes de produits technologiques : Phyling (capteurs connectés + logiciel d'analyse) et Eliga (machines servo-motorisées).</p>
 
-                <!-- CTC -->
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div>
-                            <div class="exp-role">Formation Maroquinerie & Création technique</div>
-                            <div class="exp-company">CTC Groupe</div>
+                        <div class="exp-card__section">
+                            <div class="exp-card__section-title">Stratégie produit &amp; roadmap</div>
+                            <ul class="exp-card__list">
+                                <li>Définir et piloter la feuille de route produit en arbitrant les priorités entre besoins utilisateurs, contraintes techniques hardware/software et objectifs commerciaux</li>
+                                <li>Élaborer les cahiers des charges fonctionnels et techniques en appliquant une approche centrée utilisateur</li>
+                                <li>Gérer le cycle de vie produit complet : idéation, prototypage, tests utilisateurs, validation technique, lancement et suivi post-lancement</li>
+                            </ul>
                         </div>
-                        <span class="exp-date">2023 → 2024</span>
+                        <div class="exp-card__section">
+                            <div class="exp-card__section-title">Pilotage hardware/software &amp; coordination technique</div>
+                            <ul class="exp-card__list">
+                                <li>Coordonner en méthodologie agile (Kanban, Scrum) les équipes internes, partenaires technologiques et fournisseurs internationaux pour garantir le time-to-market</li>
+                                <li>Réduction de <span class="metric-highlight">20% des non-conformités</span></li>
+                            </ul>
+                        </div>
+                        <div class="exp-card__section">
+                            <div class="exp-card__section-title">Analyse utilisateur &amp; amélioration continue</div>
+                            <ul class="exp-card__list">
+                                <li>NPS <span class="metric-highlight">+12 points</span></li>
+                                <li>Réduction de <span class="metric-highlight">70% du temps de recherche d'information</span> pour les équipes</li>
+                            </ul>
+                        </div>
+                        <div class="exp-card__section">
+                            <div class="exp-card__section-title">Développement commercial &amp; communication</div>
+                            <ul class="exp-card__list">
+                                <li><span class="metric-highlight">+35%</span> de croissance du CA</li>
+                                <li><span class="metric-highlight">+60%</span> d'engagement digital</li>
+                                <li><span class="metric-highlight">+150</span> leads qualifiés</li>
+                                <li><span class="metric-highlight">5 partenariats stratégiques</span></li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="exp-items">
-                        <li>Conception de chaussures techniques (randonnée), du patronage à l'assemblage final</li>
-                        <li>Processus industriels de production et sélection de matériaux techniques</li>
-                    </ul>
-                    <p class="exp-transfer">↳ Transférable : fabrication industrielle, rigueur qualité, spécifications techniques</p>
                 </div>
-
-                <!-- DECATHLON -->
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div>
-                            <div class="exp-role">Vendeur spécialisé — Équipements techniques</div>
-                            <div class="exp-company">Decathlon Village</div>
-                        </div>
-                        <span class="exp-date">2021 → 2022</span>
+                <!-- EXP 2 -->
+                <div class="timeline__item reveal-right">
+                    <div class="exp-card exp-card--secondary">
+                        <div class="exp-card__period">2023 — 2024</div>
+                        <h3 class="exp-card__title">Formation Maroquinerie, Chaussant &amp; Création de Chaussures Techniques</h3>
+                        <div class="exp-card__company">CTC GROUPE</div>
+                        <p class="exp-card__description">Conception de produits techniques (chaussures de randonnée), du patronage à l'assemblage final. Développement d'une connaissance approfondie des processus industriels de production.</p>
+                        <div class="exp-card__transferable">Compétence transférable — Compréhension des processus de fabrication industrielle, rigueur dans le respect des spécifications techniques et des normes de qualité.</div>
                     </div>
-                    <ul class="exp-items">
-                        <li>Conseil client sur équipements adaptés — écoute active, compréhension des usages</li>
-                        <li>Tests produits terrain et animation d'événements communautaires</li>
-                    </ul>
-                    <p class="exp-transfer">↳ Transférable : identification et formalisation des besoins utilisateurs</p>
                 </div>
-
-                <!-- INOVEA -->
-                <div class="exp-card reveal">
-                    <div class="exp-top">
-                        <div>
-                            <div class="exp-role">Ambassadeur — Conseil en gestion de patrimoine</div>
-                            <div class="exp-company">INOVÉA Patrimoine · Freelance</div>
-                        </div>
-                        <span class="exp-date">En parallèle</span>
+                <!-- EXP 3 -->
+                <div class="timeline__item reveal-left">
+                    <div class="exp-card exp-card--secondary">
+                        <div class="exp-card__period">2021 — 2022</div>
+                        <h3 class="exp-card__title">Vendeur Spécialisé — Équipements Techniques</h3>
+                        <div class="exp-card__company">DECATHLON VILLAGE</div>
+                        <p class="exp-card__description">Accompagnement des clients dans le choix d'équipements adaptés à leurs besoins spécifiques. Tests produits terrain et animation d'événements communautaires.</p>
+                        <div class="exp-card__transferable">Compétence transférable — Capacité à identifier et formaliser les besoins d'utilisateurs aux profils variés.</div>
                     </div>
-                    <ul class="exp-items">
-                        <li>Accompagnement de particuliers dans leurs décisions d'épargne et d'investissement</li>
-                        <li>Développement réseau de prospects et gestion relation client</li>
-                    </ul>
-                    <p class="exp-transfer">↳ Transférable : sens commercial, pédagogie, relation client</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- COMPÉTENCES (DARK) -->
-    <section id="skills" class="bg-dark">
-        <div class="inner">
-            <div class="sec-header reveal">
-                <div class="sec-label">// Savoir-faire</div>
-                <h2 class="sec-title sec-title-light">Compétences</h2>
-                <div class="sec-line"></div>
-            </div>
-            <div class="skills-grid">
+    <!-- COMPETENCES -->
+    <section class="skills" id="skills" aria-label="Compétences">
+        <div class="container">
+            <h2 class="section-title reveal">Compétences</h2>
+            <div class="skills__grid stagger-children">
                 <div class="skill-card reveal">
-                    <div class="sk-icon sk-icon-1"><i class="fas fa-chess"></i></div>
-                    <h3>Product Management & Stratégie</h3>
-                    <div class="bar-group"><div class="bar-label"><span>Roadmap & Priorisation</span><span>95%</span></div><div class="bar-track"><div class="bar-fill fill-or" data-w="95"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Cycle de vie produit</span><span>90%</span></div><div class="bar-track"><div class="bar-fill fill-or" data-w="90"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Agile / Scrum / Kanban</span><span>85%</span></div><div class="bar-track"><div class="bar-fill fill-or" data-w="85"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Go-to-Market</span><span>85%</span></div><div class="bar-track"><div class="bar-fill fill-or" data-w="85"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Data-driven (NPS, adoption)</span><span>80%</span></div><div class="bar-track"><div class="bar-fill fill-or" data-w="80"></div></div></div>
+                    <h3 class="skill-card__title">Product Management &amp; Stratégie</h3>
+                    <ul class="skill-card__list">
+                        <li>Pilotage de roadmap produit</li>
+                        <li>Priorisation backlog</li>
+                        <li>Cycle de vie produit (idéation → lancement)</li>
+                        <li>Méthodologies agiles (Scrum, Kanban)</li>
+                        <li>Approche data-driven (NPS, adoption, satisfaction)</li>
+                        <li>Cahiers des charges fonctionnels &amp; techniques</li>
+                    </ul>
                 </div>
                 <div class="skill-card reveal">
-                    <div class="sk-icon sk-icon-2"><i class="fas fa-microchip"></i></div>
-                    <h3>Hardware, Software & Embarqué</h3>
-                    <div class="bar-group"><div class="bar-label"><span>Cahiers des charges</span><span>95%</span></div><div class="bar-track"><div class="bar-fill fill-bl" data-w="95"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Capteurs & IoT</span><span>85%</span></div><div class="bar-track"><div class="bar-fill fill-bl" data-w="85"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Machines servo-motorisées</span><span>90%</span></div><div class="bar-track"><div class="bar-fill fill-bl" data-w="90"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Qualification fournisseurs</span><span>85%</span></div><div class="bar-track"><div class="bar-fill fill-bl" data-w="85"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Conformité & Qualité</span><span>80%</span></div><div class="bar-track"><div class="bar-fill fill-bl" data-w="80"></div></div></div>
+                    <h3 class="skill-card__title">Hardware, Software &amp; Systèmes Embarqués</h3>
+                    <ul class="skill-card__list">
+                        <li>Capteurs connectés</li>
+                        <li>Logiciels embarqués</li>
+                        <li>Machines servo-motorisées</li>
+                        <li>Coordination ingénieurs &amp; partenaires</li>
+                        <li>Qualification fournisseurs</li>
+                        <li>Suivi de conformité produit</li>
+                    </ul>
                 </div>
                 <div class="skill-card reveal">
-                    <div class="sk-icon sk-icon-3"><i class="fas fa-users"></i></div>
-                    <h3>Communication & Leadership</h3>
-                    <div class="bar-group"><div class="bar-label"><span>Coordination cross-fonctionnelle</span><span>90%</span></div><div class="bar-track"><div class="bar-fill fill-gr" data-w="90"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Présentation stratégique</span><span>85%</span></div><div class="bar-track"><div class="bar-fill fill-gr" data-w="85"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Formation d'équipes</span><span>80%</span></div><div class="bar-track"><div class="bar-fill fill-gr" data-w="80"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Coordination internationale</span><span>85%</span></div><div class="bar-track"><div class="bar-fill fill-gr" data-w="85"></div></div></div>
-                    <div class="bar-group"><div class="bar-label"><span>Stratégie contenu digital</span><span>80%</span></div><div class="bar-track"><div class="bar-fill fill-gr" data-w="80"></div></div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CITATION -->
-    <div class="quote-sec">
-        <blockquote class="reveal">
-            Un bon produit ne naît pas dans un bureau.<br>
-            Il naît sur le terrain, dans l'écoute des utilisateurs<br>
-            et dans la rigueur de l'exécution.
-        </blockquote>
-        <p class="quote-author reveal">— Yohan Palomba</p>
-    </div>
-
-    <!-- PROJETS -->
-    <section id="projects" class="bg-cream">
-        <div class="inner">
-            <div class="sec-header reveal">
-                <div class="sec-label">// Réalisations</div>
-                <h2 class="sec-title sec-title-dark">Projets marquants</h2>
-                <div class="sec-line"></div>
-            </div>
-            <div class="proj-grid">
-                <div class="proj-card reveal">
-                    <div class="proj-emoji">⚡</div>
-                    <h3>Functional Trainer ELIGA</h3>
-                    <p>Machine à résistance électrique servo-motorisée — rupture technologique vs. pneumatique. Tests avec Metz Handball et Provence Rugby.</p>
-                    <span class="proj-tag">Hardware & Software</span>
-                </div>
-                <div class="proj-card reveal">
-                    <div class="proj-emoji">📡</div>
-                    <h3>Phyling — Capteurs connectés</h3>
-                    <p>Gamme de capteurs connectés avec logiciel d'analyse intégré. Coordination R&D, tests terrain, itérations data-driven.</p>
-                    <span class="proj-tag">IoT & Data</span>
-                </div>
-                <div class="proj-card reveal">
-                    <div class="proj-emoji">🌏</div>
-                    <h3>China Sport Show 2025</h3>
-                    <p>Déplacement solo en Chine — veille technologique, analyse tendances, échanges avec fabricants et équipes R&D.</p>
-                    <span class="proj-tag">Veille internationale</span>
-                </div>
-                <div class="proj-card reveal">
-                    <div class="proj-emoji">🏅</div>
-                    <h3>Équipement JO Milan 2026</h3>
-                    <p>Équipement du Centre National d'entraînement pour la préparation des athlètes français aux Jeux olympiques d'hiver.</p>
-                    <span class="proj-tag">Haute performance</span>
-                </div>
-                <div class="proj-card reveal">
-                    <div class="proj-emoji">🤝</div>
-                    <h3>Consortium Industrie du Sport</h3>
-                    <p>Consortium de 7 entreprises françaises pour promouvoir le savoir-faire français sur les marchés internationaux.</p>
-                    <span class="proj-tag">Export & Stratégie</span>
-                </div>
-                <div class="proj-card reveal">
-                    <div class="proj-emoji">🇳🇴</div>
-                    <h3>Partenariat Gungnir of Norway</h3>
-                    <p>Intégration des barres Gungnir dans la gamme LAROQ. Co-développement international, tests avec Pierre Motal.</p>
-                    <span class="proj-tag">Partenariat international</span>
+                    <h3 class="skill-card__title">Communication &amp; Leadership</h3>
+                    <ul class="skill-card__list">
+                        <li>Animation d'échanges cross-fonctionnels</li>
+                        <li>Présentation stratégique</li>
+                        <li>Formation d'équipes</li>
+                        <li>Coordination internationale</li>
+                        <li>Développement commercial</li>
+                        <li>Stratégie de communication digitale</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FORMATION -->
-    <section id="edu" class="bg-white">
-        <div class="inner">
-            <div class="sec-header reveal">
-                <div class="sec-label">// Académique</div>
-                <h2 class="sec-title sec-title-dark">Formation</h2>
-                <div class="sec-line"></div>
-            </div>
-            <div class="form-list">
-                <div class="form-card reveal">
-                    <span class="form-year">2022 — 2024</span>
-                    <div class="form-info">
-                        <h3>Master Ingénierie et Ergonomie — Interface Homme-Matériel</h3>
-                        <p>Université Savoie Mont Blanc</p>
-                    </div>
+    <section class="education" id="education" aria-label="Formation">
+        <div class="container">
+            <h2 class="section-title reveal">Formation</h2>
+            <div class="education__grid">
+                <div class="edu-card reveal">
+                    <div class="edu-card__period">2022 — 2024</div>
+                    <div class="edu-card__degree">Master, Ingénierie et Ergonomie des Activités Physiques — Interface Homme Matériel</div>
+                    <div class="edu-card__school">Université Savoie Mont Blanc</div>
                 </div>
-                <div class="form-card reveal">
-                    <span class="form-year">2019 — 2022</span>
-                    <div class="form-info">
-                        <h3>Licence STAPS mention ESPM (Ergonomie du Sport et Performance Motrice)</h3>
-                        <p>Aix-Marseille Université</p>
-                    </div>
+                <div class="edu-card reveal">
+                    <div class="edu-card__period">2019 — 2022</div>
+                    <div class="edu-card__degree">Licence STAPS mention ESPM (Ergonomie du Sport et Performance Motrice)</div>
+                    <div class="edu-card__school">Aix-Marseille Université</div>
                 </div>
-                <div class="form-card reveal">
-                    <span class="form-year">2020 — 2021</span>
-                    <div class="form-info">
-                        <h3>DEUG STAPS</h3>
-                        <p>Aix-Marseille Université</p>
-                    </div>
+                <div class="edu-card reveal">
+                    <div class="edu-card__period">2020 — 2021</div>
+                    <div class="edu-card__degree">DEUG STAPS</div>
+                    <div class="edu-card__school">Aix-Marseille Université</div>
                 </div>
             </div>
-            <div class="cl-grid">
-                <div class="cl-card reveal">
-                    <h4><i class="fas fa-certificate"></i> Certifications</h4>
+            <div class="education__extra stagger-children">
+                <div class="edu-extra-card reveal">
+                    <h3 class="edu-extra-card__title">Certifications</h3>
                     <ul>
-                        <li>Ambassadeur INOVÉA Patrimoine</li>
-                        <li>BAFA — Animation</li>
-                        <li>SST — Sauveteur Secouriste du Travail</li>
+                        <li>Ambassadeur INOVEA PATRIMOINE</li>
+                        <li>BAFA, Animation</li>
+                        <li>SST</li>
                     </ul>
                 </div>
-                <div class="cl-card reveal">
-                    <h4><i class="fas fa-globe"></i> Langues</h4>
+                <div class="edu-extra-card reveal">
+                    <h3 class="edu-extra-card__title">Langues</h3>
                     <ul>
-                        <li>🇫🇷 Français — Natif</li>
-                        <li>🇬🇧 Anglais — B2 Avancé</li>
+                        <li>Anglais — B2, Avancé</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PUBLICATIONS LINKEDIN -->
+    <section class="publications" id="publications" aria-label="Publications LinkedIn">
+        <div class="container">
+            <h2 class="section-title reveal">Publications</h2>
+            <p class="publications__subtitle reveal">Mes réflexions et retours terrain sur le product management, l'industrie fitness et l'innovation — publiés sur LinkedIn.</p>
+            <div class="publications__grid stagger-children">
+                <div class="pub-card reveal">
+                    <div class="pub-card__type">LinkedIn — Mars 2026</div>
+                    <h3 class="pub-card__title">LAROQ aux JO d'hiver de Milan 2026</h3>
+                    <p class="pub-card__excerpt">Fier de voir du LAROQ équiper le Centre National d'entraînement où les athlètes se sont préparés avant les Jeux d'hiver 2026 de Milan. Une reconnaissance de la qualité et du savoir-faire LAROQ.</p>
+                    <a href="https://www.linkedin.com/posts/yohan-palomba_performance-olympique-hauteperformance-activity-7431654498399354880-yqCe" target="_blank" rel="noopener noreferrer" class="pub-card__link">Lire sur LinkedIn <span>→</span></a>
+                </div>
+                <div class="pub-card reveal">
+                    <div class="pub-card__type">LinkedIn — Juin 2025</div>
+                    <h3 class="pub-card__title">Veille technologique au China Sport Show 2025</h3>
+                    <p class="pub-card__excerpt">Déplacement professionnel en Chine pour le plus grand salon asiatique du fitness. Découverte des innovations biomécaniques, analyse des tendances et échanges avec les équipes R&amp;D sur place.</p>
+                    <a href="https://www.linkedin.com/posts/yohan-palomba_businesstrip-fitnessindustry-musculation-activity-7341841322053406720-I1Xz" target="_blank" rel="noopener noreferrer" class="pub-card__link">Lire sur LinkedIn <span>→</span></a>
+                </div>
+                <div class="pub-card reveal">
+                    <div class="pub-card__type">LinkedIn — Avril 2025</div>
+                    <h3 class="pub-card__title">Retour d'expérience — FIBO 2025</h3>
+                    <p class="pub-card__excerpt">Première participation au FIBO, le plus grand salon mondial du fitness. Présentation du banc développé couché LAROQ et de la machine BXT51 développée avec Frédéric Delavier.</p>
+                    <a href="https://www.linkedin.com/posts/yohan-palomba_prepaphysique-entrainement-salon-activity-7321813853397311488--tuo" target="_blank" rel="noopener noreferrer" class="pub-card__link">Lire sur LinkedIn <span>→</span></a>
+                </div>
+            </div>
+            <div class="publications__cta reveal">
+                <a href="https://linkedin.com/in/yohan-palomba-58b0b5191" target="_blank" rel="noopener noreferrer" class="btn btn--outline-primary">Voir toutes mes publications</a>
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="bg-cream">
-        <div class="inner">
-            <div class="sec-header reveal">
-                <div class="sec-label">// Échangeons</div>
-                <h2 class="sec-title sec-title-dark">Contact</h2>
-                <div class="sec-line"></div>
-            </div>
-            <div class="contact-grid reveal">
-                <div class="contact-text">
-                    <h3>Envie de collaborer ?</h3>
-                    <p>
-                        Je suis en recherche active d'un poste de <strong>Product Manager</strong> — 
-                        idéalement dans le sport, l'industrie, la santé ou l'IoT.<br><br>
-                        Ouvert à tout projet où le produit est physique, technique et innovant.
-                    </p>
-                    <div class="contact-btns">
-                        <a href="mailto:yocellier@gmail.com" class="btn btn-dark"><i class="fas fa-paper-plane"></i> Envoyer un email</a>
-                        <a href="https://www.linkedin.com/in/yohan-palomba" target="_blank" class="btn btn-white"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+    <section class="contact" id="contact" aria-label="Contact">
+        <div class="container">
+            <h2 class="section-title section-title--light reveal">Travaillons ensemble</h2>
+            <p class="contact__subtitle reveal">Vous avez un projet produit ? Discutons-en.</p>
+            <div class="contact__grid">
+                <div class="contact__info reveal">
+                    <div class="contact__info-list">
+                        <div class="contact__info-item">
+                            <span class="contact__info-label">Email</span>
+                            <a href="mailto:yocellier@gmail.com">yocellier@gmail.com</a>
+                        </div>
+                        <div class="contact__info-item">
+                            <span class="contact__info-label">Téléphone</span>
+                            <a href="tel:+33651744269">06 51 74 42 69</a>
+                        </div>
+                        <div class="contact__info-item">
+                            <span class="contact__info-label">Lieu</span>
+                            <span>Paris, France</span>
+                        </div>
+                        <div class="contact__info-item">
+                            <span class="contact__info-label">LinkedIn</span>
+                            <a href="https://linkedin.com/in/yohan-palomba-58b0b5191" target="_blank" rel="noopener noreferrer">linkedin.com/in/yohan-palomba</a>
+                        </div>
+                    </div>
+                    <div class="contact__cv-btn">
+                        <a href="cv-yohan-palomba.pdf" download class="btn btn--accent">Télécharger mon CV (PDF)</a>
                     </div>
                 </div>
-                <div class="c-cards">
-                    <a href="mailto:yocellier@gmail.com" class="c-card">
-                        <i class="fas fa-envelope"></i>
-                        <div class="c-card-info"><span class="c-card-label">Email</span><span class="c-card-value">yocellier@gmail.com</span></div>
-                    </a>
-                    <a href="tel:+33651744269" class="c-card">
-                        <i class="fas fa-phone"></i>
-                        <div class="c-card-info"><span class="c-card-label">Téléphone</span><span class="c-card-value">06 51 74 42 69</span></div>
-                    </a>
-                    <a href="https://www.linkedin.com/in/yohan-palomba" target="_blank" class="c-card">
-                        <i class="fab fa-linkedin-in"></i>
-                        <div class="c-card-info"><span class="c-card-label">LinkedIn</span><span class="c-card-value">linkedin.com/in/yohan-palomba</span></div>
-                    </a>
-                    <div class="c-card" style="cursor:default;">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="c-card-info"><span class="c-card-label">Localisation</span><span class="c-card-value">Paris, France</span></div>
+                <form class="contact__form reveal" id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="name">Nom *</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom complet" required aria-required="true">
                     </div>
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Objet de votre message">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Votre message..." required aria-required="true"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary">Envoyer le message</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <!-- INTERESTS -->
-    <div class="interests">
-        <div class="int-item"><i class="fas fa-lightbulb"></i> Innovation technologique</div>
-        <div class="int-item"><i class="fas fa-chess-knight"></i> Stratégie produit</div>
-        <div class="int-item"><i class="fas fa-dumbbell"></i> Sport & Performance</div>
-        <div class="int-item"><i class="fas fa-cogs"></i> Matériels techniques</div>
-        <div class="int-item"><i class="fas fa-mountain"></i> Randonnée & Trail</div>
-    </div>
-
     <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Yohan Palomba · Product Manager · <a href="mailto:yocellier@gmail.com">yocellier@gmail.com</a> · Paris</p>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__links">
+                    <a href="https://linkedin.com/in/yohan-palomba-58b0b5191" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="mailto:yocellier@gmail.com">Email</a>
+                </div>
+                <p class="footer__copy">&copy; 2026 Yohan Palomba — Tous droits réservés</p>
+                <a href="#hero" class="footer__top-link" aria-label="Retour en haut">Retour en haut</a>
+            </div>
+        </div>
     </footer>
 
-    <!-- FLOATING CTA -->
-    <div class="float-cta" id="floatCta">
-        <a href="mailto:yocellier@gmail.com"><i class="fas fa-envelope"></i> Me contacter</a>
-    </div>
+    <button class="back-to-top" id="backToTop" aria-label="Retour en haut de page">&uarr;</button>
 
-    <!-- JS -->
     <script>
-        // Nav: dark on hero, light on scroll
-        const navEl = document.getElementById('nav');
-        const heroH = document.querySelector('.hero').offsetHeight;
-        const floatEl = document.getElementById('floatCta');
+    (function(){
+        'use strict';
 
-        window.addEventListener('scroll', () => {
-            const y = window.scrollY;
-            navEl.classList.toggle('scrolled-light', y > heroH - 100);
-            floatEl.classList.toggle('show', y > 500);
+        // NAVBAR SCROLL
+        var navbar=document.getElementById('navbar');
+        function onScroll(){
+            navbar.classList.toggle('scrolled',window.scrollY>50);
+            document.getElementById('backToTop').classList.toggle('visible',window.scrollY>500);
+        }
+        window.addEventListener('scroll',onScroll,{passive:true});
+        onScroll();
+
+        // HAMBURGER
+        var hamburger=document.getElementById('hamburger'),menu=document.getElementById('mobileMenu');
+        hamburger.addEventListener('click',function(){
+            var open=hamburger.classList.toggle('active');
+            menu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded',open);
+            document.body.style.overflow=open?'hidden':'';
+        });
+        menu.querySelectorAll('a').forEach(function(l){
+            l.addEventListener('click',function(){
+                hamburger.classList.remove('active');menu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded','false');document.body.style.overflow='';
+            });
         });
 
-        // Mobile menu
-        document.querySelectorAll('.nav-links a').forEach(a => {
-            a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('active'));
+        // SMOOTH SCROLL
+        document.querySelectorAll('a[href^="#"]').forEach(function(a){
+            a.addEventListener('click',function(e){
+                e.preventDefault();
+                var t=document.querySelector(this.getAttribute('href'));
+                if(t){window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-navbar.offsetHeight-10,behavior:'smooth'})}
+            });
         });
 
-        // Reveal on scroll + skill bars
-        const obs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    entry.target.querySelectorAll('.bar-fill').forEach(b => {
-                        setTimeout(() => { b.style.width = b.dataset.w + '%'; }, 400);
+        // SCROLL REVEAL
+        var obs=new IntersectionObserver(function(entries){
+            entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('revealed')});
+        },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+        document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(function(el){obs.observe(el)});
+
+        // COUNTERS
+        var done=false,counters=document.querySelectorAll('.metric-card__number');
+        function ease(t){return 1-Math.pow(1-t,4)}
+        function animate(el,target,dur,pre,suf){
+            var start=null;
+            function step(ts){
+                if(!start)start=ts;
+                var p=Math.min((ts-start)/dur,1);
+                el.textContent=pre+Math.floor(ease(p)*target)+suf;
+                if(p<1)requestAnimationFrame(step);else el.textContent=pre+target+suf;
+            }
+            requestAnimationFrame(step);
+        }
+        new IntersectionObserver(function(entries){
+            entries.forEach(function(e){
+                if(e.isIntersecting&&!done){
+                    done=true;
+                    counters.forEach(function(c){
+                        animate(c,parseInt(c.dataset.target),2000,c.dataset.prefix||'',c.dataset.suffix||'');
                     });
-                    obs.unobserve(entry.target);
                 }
             });
-        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+        },{threshold:.3}).observe(document.getElementById('metrics'));
 
-        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(a => {
-            a.addEventListener('click', function(e) {
-                e.preventDefault();
-                const t = document.querySelector(this.getAttribute('href'));
-                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
+        // BACK TO TOP
+        document.getElementById('backToTop').addEventListener('click',function(){
+            window.scrollTo({top:0,behavior:'smooth'});
         });
-    </script>
 
+        // FORM
+        document.getElementById('contactForm').addEventListener('submit',function(e){
+            e.preventDefault();
+            var n=document.getElementById('name').value.trim(),
+                em=document.getElementById('email').value.trim(),
+                m=document.getElementById('message').value.trim();
+            if(!n||!em||!m){alert('Veuillez remplir tous les champs obligatoires.');return}
+            if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){alert('Veuillez entrer une adresse email valide.');return}
+            alert('Merci '+n+' ! Votre message a bien été envoyé. Je vous répondrai dans les plus brefs délais.');
+            this.reset();
+        });
+    })();
+    </script>
 </body>
 </html>
